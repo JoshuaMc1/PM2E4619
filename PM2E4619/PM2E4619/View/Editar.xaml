@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PM2E4619.View.Editar"
+             Title="Editar">
+    <StackLayout 
+        BackgroundColor="#2B2D42"
+        Padding="25">
+        <Frame 
+            Padding="10"
+            CornerRadius="15"
+            BackgroundColor="#F7F7FF">
+            <StackLayout>
+                <StackLayout>
+                    <Image
+                        WidthRequest="200"
+                        HeightRequest="270"
+                        x:Name="txtImagen"
+                        Aspect="AspectFit"
+                        Source="{Binding image}"/>
+                    <ImageButton
+                        x:Name="btnTomarFoto"
+                        Source="https://cdn-icons-png.flaticon.com/128/883/883746.png"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="CenterAndExpand"
+                        BackgroundColor="#BFCDE0"
+                        BorderColor="#2B2D42"
+                        BorderWidth="1.5"
+                        CornerRadius="10"
+                        Padding="4"
+                        Clicked="btnTomarFoto_Clicked"/>
+                </StackLayout>
+
+                <StackLayout>
+                    <Label 
+                        Text="ID"
+                        FontSize="Subtitle"
+                        FontAttributes="Bold"
+                        TextColor="Black"/>
+                    <Entry
+                        x:Name="txtID"
+                        Text="{Binding Id}"
+                        IsEnabled="False"/>
+                </StackLayout>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="220"/>
+                        <ColumnDefinition Width="100"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackLayout 
+                        Grid.Row="0" 
+                        Grid.Column="0">
+                        <Label 
+                            Text="Latitud:"
+                            FontSize="Subtitle"
+                            FontAttributes="Bold"
+                            TextColor="Black"/>
+                        <Entry
+                            x:Name="txtLatitud"
+                            Placeholder="0.00000"
+                            Text="{Binding latitud}"
+                            FontAttributes="Italic"
+                            Keyboard="Text"
+                            IsEnabled="False"
+                            ClearButtonVisibility="WhileEditing"/>
+                    </StackLayout>
+                    <StackLayout 
+                        Grid.Row="1" 
+                        Grid.Column="0">
+                        <Label 
+                            Text="Longitud:"
+                            FontSize="Subtitle"
+                            FontAttributes="Bold"
+                            TextColor="Black"/>
+                        <Entry
+                            x:Name="txtLongitud"
+                            Placeholder="0.00000"
+                            Text="{Binding longitud}"
+                            FontAttributes="Italic"
+                            Keyboard="Text"
+                            IsEnabled="False"
+                            ClearButtonVisibility="WhileEditing"/>
+                    </StackLayout>
+                    <StackLayout 
+                        Grid.Row="0" 
+                        Grid.Column="1" 
+                        Grid.RowSpan="2">
+                        <ImageButton
+                            x:Name="btnUbicacion"
+                            Source="https://cdn-icons-png.flaticon.com/128/854/854878.png"
+                            HorizontalOptions="CenterAndExpand"
+                            VerticalOptions="CenterAndExpand"
+                            BackgroundColor="#BFCDE0"
+                            BorderColor="#2B2D42"
+                            BorderWidth="1.5"
+                            CornerRadius="10"
+                            Padding="4"
+                            HeightRequest="150"
+                            Clicked="btnUbicacion_Clicked"/>
+                    </StackLayout>
+                    <StackLayout
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2">
+                        <Label 
+                            Text="Descripcion:"
+                            FontSize="Subtitle"
+                            FontAttributes="Bold"
+                            TextColor="Black"/>
+                        <Entry
+                            x:Name="txtDescripcion"
+                            FontAttributes="Italic"
+                            Text="{Binding descripcion}"
+                            Placeholder="Ingrese una descripcion"
+                            ClearButtonVisibility="WhileEditing"/>
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+        </Frame>
+        <Frame
+            CornerRadius="15">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    x:Name="btnEditar"
+                    Text="Editar"
+                    BackgroundColor="#0B6E4F"
+                    TextColor="White"
+                    CornerRadius="10"
+                    Clicked="btnEditar_Clicked"/>
+                <Button
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    x:Name="btnLista"
+                    Text="Ver lista"
+                    BackgroundColor="#1F5673"
+                    TextColor="White"
+                    CornerRadius="10"
+                    Clicked="btnLista_Clicked"/>
+            </Grid>
+        </Frame>
+    </StackLayout>
+</ContentPage>

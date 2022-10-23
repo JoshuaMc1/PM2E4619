@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PM2E4619.MainPage"
+             Title="Pagina principal">
+
+    <StackLayout 
+        BackgroundColor="#2B2D42"
+        Padding="25">
+        <Frame 
+            Padding="10"
+            CornerRadius="15"
+            BackgroundColor="#F7F7FF">
+            <StackLayout>
+                <StackLayout>
+                    <Image
+                        WidthRequest="200"
+                        HeightRequest="280"
+                        x:Name="txtImagen"
+                        Aspect="AspectFit"
+                        Source="https://cdn.pixabay.com/photo/2014/05/21/19/14/the-question-mark-350168_960_720.png"/>
+                    <ImageButton
+                        x:Name="btnTomarFoto"
+                        Source="https://cdn-icons-png.flaticon.com/128/883/883746.png"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="CenterAndExpand"
+                        BackgroundColor="#BFCDE0"
+                        BorderColor="#2B2D42"
+                        BorderWidth="1.5"
+                        CornerRadius="10"
+                        Padding="4"
+                        Clicked="BtnTomarFoto_Clicked"/>
+                </StackLayout>
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="220"/>
+                        <ColumnDefinition Width="100"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackLayout 
+                        Grid.Row="0" 
+                        Grid.Column="0">
+                        <Label 
+                            Text="Latitud:"
+                            FontSize="Subtitle"
+                            FontAttributes="Bold"
+                            TextColor="Black"/>
+                        <Entry
+                            x:Name="txtLatitud"
+                            Placeholder="0.00000"
+                            FontAttributes="Italic"
+                            Keyboard="Text"
+                            IsEnabled="False"
+                            ClearButtonVisibility="WhileEditing"/>
+                    </StackLayout>
+                    <StackLayout 
+                        Grid.Row="1" 
+                        Grid.Column="0">
+                        <Label 
+                            Text="Longitud:"
+                            FontSize="Subtitle"
+                            FontAttributes="Bold"
+                            TextColor="Black"/>
+                        <Entry
+                            x:Name="txtLongitud"
+                            Placeholder="0.00000"
+                            FontAttributes="Italic"
+                            Keyboard="Text"
+                            IsEnabled="False"
+                            ClearButtonVisibility="WhileEditing"/>
+                    </StackLayout>
+                    <StackLayout 
+                        Grid.Row="0" 
+                        Grid.Column="1" 
+                        Grid.RowSpan="2">
+                        <ImageButton
+                            x:Name="btnUbicacion"
+                            Source="https://cdn-icons-png.flaticon.com/128/854/854878.png"
+                            HorizontalOptions="CenterAndExpand"
+                            VerticalOptions="CenterAndExpand"
+                            BackgroundColor="#BFCDE0"
+                            BorderColor="#2B2D42"
+                            BorderWidth="1.5"
+                            CornerRadius="10"
+                            Padding="4"
+                            HeightRequest="150"
+                            Clicked="BtnUbicacion_Clicked"/>
+                    </StackLayout>
+                    <StackLayout
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2">
+                        <Label 
+                            Text="Descripcion:"
+                            FontSize="Subtitle"
+                            FontAttributes="Bold"
+                            TextColor="Black"/>
+                        <Entry
+                            x:Name="txtDescripcion"
+                            FontAttributes="Italic"
+                            Placeholder="Ingrese una descripcion"
+                            ClearButtonVisibility="WhileEditing"/>
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+        </Frame>
+        <Frame
+            CornerRadius="15">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    x:Name="btnGuardar"
+                    Text="Guardar"
+                    BackgroundColor="#0B6E4F"
+                    TextColor="White"
+                    CornerRadius="10"
+                    Clicked="BtnGuardar_Clicked"/>
+                <Button
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    x:Name="btnLista"
+                    Text="Ver lista"
+                    BackgroundColor="#1F5673"
+                    TextColor="White"
+                    CornerRadius="10"
+                    Clicked="BtnLista_Clicked"/>
+            </Grid>
+        </Frame>
+    </StackLayout>
+</ContentPage>

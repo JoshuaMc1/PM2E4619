@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PM2E4619.View.Lista"
+             Title="Lista de datos">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem 
+            x:Name="btnAgregar"
+            Text="Nuevo"
+            Clicked="btnAgregar_Clicked"/>
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <StackLayout
+            BackgroundColor="#2B2D42"
+            Padding="25">
+
+            <Frame 
+                Padding="10"
+                CornerRadius="15"
+                BackgroundColor="#F7F7FF">
+                <CollectionView 
+                    x:Name="txtLista"
+                    SelectionMode="Single"
+                    SelectionChanged="txtLista_SelectionChanged">
+                    
+                    <CollectionView.EmptyView>
+                        <ActivityIndicator 
+                            IsRunning="True"
+                            VerticalOptions="CenterAndExpand"
+                            Color="#2B2D42"/>
+                    </CollectionView.EmptyView>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout
+                                Padding="10">
+                                <Frame
+                                    Padding="0"
+                                    CornerRadius="20"
+                                    IsClippedToBounds="True">
+                                    <Image
+                                        Source="{Binding image}"
+                                        Aspect="AspectFit"/>
+                                </Frame>
+                                <Label
+                                    Text="{Binding descripcion}"
+                                    FontSize="Body"
+                                    TextColor="Black"
+                                    FontAttributes="Bold"
+                                    HorizontalTextAlignment="Center"/>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
