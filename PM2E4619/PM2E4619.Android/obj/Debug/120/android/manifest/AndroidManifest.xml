@@ -7,7 +7,6 @@
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.companyname.pm2e4619" android:installLocation="auto" android:versionCode="1" android:versionName="1.0">
   <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="31" />
-  <meta-data android:name="com.google.android.geo.API_KEY" android:value="" />
   <uses-feature android:name="android.hardware.camera" android:required="false" />
   <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -31,6 +30,7 @@
     </intent>
   </queries>
   <application android:name="android.app.Application" android:allowBackup="true" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:debuggable="true" android:extractNativeLibs="true" android:icon="@mipmap/icon" android:label="PM2E4619.Android" android:theme="@style/MainTheme">
+    <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyCOL_bPPRu-1X1JA_yFbCArdRed8-8EdwE" />
     <provider android:name="androidx.core.content.FileProvider" android:authorities="com.companyname.pm2e4619.fileprovider" android:exported="false" android:grantUriPermissions="true">
       <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths" />
     </provider>
